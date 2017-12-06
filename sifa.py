@@ -24,14 +24,11 @@ if not os.path.isfile(args.input):
 if os.path.exists(args.output):
   print "Error : output file exists in this directory"
   sys.exit(1)
-#mon chemin pour les corpus
-# fileIN=open('/media/zeynal/Sevil Zeynali/INIST/mesdonnees/LSI_LDA/corpus/corpus_mixe_1_article_1_ligne.txt','r').readlines()
+#mon chemin pour le corpus d'entré
 fileIN=open(args.input,"r").readlines()
-# fileOut=codecs.open('/media/zeynal/Sevil Zeynali/INIST/mesdonnees/LSI_LDA/resultats/res_corpus_mixe_1_article_1_ligne.txt','w','utf-8')
 fileOut= open(args.output,"w")
 
 #ouverture de mon stop liste
-
 stopFile=open(os.getcwd()+'/stop_word.txt','r').readlines()
 stop=list()
 for i in stopFile:
@@ -42,7 +39,6 @@ for i in stopFile:
 lemm = nltk.WordNetLemmatizer()
 #lemmatizer les mots dans le fichierIN
 txt=[[lemm.lemmatize(unicode(word, 'utf-8')) for word in d.lower().split() if (word not in stop and len(word)>3) ] for d in fileIN]
-#print type(txt)
 #calculer la frequence des mots dans le fichierIN
 all_tokens=sum(txt,[])
 #print type(all_tokens)
@@ -50,7 +46,6 @@ all_tokens=sum(txt,[])
 tokens_once=set(word for word in set(all_tokens) if all_tokens.count(word)<2)
 #si la freq d'un mot est plus qu'un, pour pas avoir des doublons
 texts=[[word for word in text if word not in tokens_once] for text in txt]
-#print texts
 
 dictionary=corpora.Dictionary(texts)
 
@@ -66,7 +61,6 @@ if len(fileIN)>1:
   
 dd=dict()
 for i in range(0,lsi.num_topics):
-  #print type(lda.print_topic(i))
   fileOut.write(lsi.print_topic(i)+'\n')
   dd[i]=lsi.print_topic(i)
 
