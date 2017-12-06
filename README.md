@@ -1,7 +1,7 @@
 
-# sifa : Semantic Indexing of French Articles
+# sisa : Semantic Indexing of Scientific Articles
 
-Keffa is a program in Python for extract semantic fileds from French articles in txt format. It uses Python [LSI](https://radimrehurek.com/gensim/models/lsimodel.html) library.
+Keffa is a program in Python for extract semantic fileds from scientific articles in txt format. It uses Python [LSI](https://radimrehurek.com/gensim/models/lsimodel.html) library.
 
 ## Installing and requirements
 
