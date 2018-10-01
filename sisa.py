@@ -11,7 +11,7 @@ import argparse
 import sys
 
 # Récupération des arguments
-parser=argparse.ArgumentParser(description="Siffa is a program for semantic indexing of French articles. It uses Python LSI library.")
+parser=argparse.ArgumentParser(description="Siffa is a program for semantic indexing of English articles. It uses Python LSI library.")
 parser.add_argument("-i","--input", help="Entry text file to index",required=True)
 parser.add_argument("-o","--output", help="Output file where the results will be stored",required=True)
 args=parser.parse_args()
