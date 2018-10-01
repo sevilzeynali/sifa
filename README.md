@@ -15,8 +15,8 @@ The input file should be a text file with one article per line without \n in eac
 In the output file you can see the semantic field for each article and their tfidf
 you can change the number of topics that you want in output and also the number of semantic fields per line
 
-usage: sifa.py [-h] -i INPUT -o OUTPUT                                                                                                             
-sifa is a program for extract semantic fields from french articles. It uses Python TextBlob library.                                                         
+usage: sisa.py [-h] -i INPUT -o OUTPUT                                                                                                             
+sisa is a program for extract semantic fields from english articles.                                                         
 optional arguments:                                                                                                                                                         
   -h, --help                       Show this help message and exit                                                                                                                     
   -i INPUT, --input INPUT          Entry text file to index                                                                                                           
